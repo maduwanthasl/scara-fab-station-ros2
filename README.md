@@ -195,36 +195,83 @@ waypoints_file='your_waypoints.csv'
 
 ## Package Structure
 
+## Package Structure
+
 ```
-sr_ws/
-├── src/
-│   └── scara_fab_station_description/
-│       ├── CMakeLists.txt
-│       ├── package.xml
-│       ├── urdf/
-│       │   ├── scara_fab_station.urdf          # Robot description
-│       │   └── scara_world.sdf                 # Gazebo world
-│       ├── meshes/                             # STL mesh files
-│       ├── launch/
-│       │   ├── view_all.launch.py              # Main launch file
-│       │   ├── follow_waypoints.launch.py      # Waypoint follower launch
-│       │   ├── launch_all.sh                   # Wrapper script (fixes snap conflicts)
-│       │   └── launch_moveit_demo.sh           # MoveIt launch wrapper
-│       ├── scripts/
-│       │   └── follow_waypoints.py             # Waypoint follower node
-│       ├── waypoints/
-│       │   └── star_waypoints_xyz_meters.csv   # Example waypoints (star pattern)
-│       ├── rviz/
-│       │   └── view_all.rviz                   # RViz configuration
-│       └── arm_moveit_config/                  # MoveIt configuration
-│           └── config/
-│               ├── moveit_controllers.yaml
-│               ├── joint_limits.yaml
-│               └── ros2_controllers.yaml
-├── build/
-├── install/
-└── log/
+scara-fab-station-ros2/
+├── 📄 launch_all.sh                                # Main launcher (Gazebo + RViz + MoveIt)
+├── 📄 launch_moveit_demo.sh                        # MoveIt demo launcher
+├── 📄 launch_gazebo.sh                             # Gazebo-only launcher
+├── 📄 launch_rviz.sh                               # RViz-only launcher
+├── 📄 launch_moveit_setup.sh                       # MoveIt Setup Assistant launcher
+│
+├── 📁 src/scara_fab_station_description/
+│   ├── 📄 CMakeLists.txt                           # Build configuration
+│   ├── 📄 package.xml                              # ROS 2 package metadata
+│   │
+│   ├── 📁 urdf/
+│   │   └── 📄 scara_fab_station.urdf               # Robot URDF description
+│   │
+│   ├── 📁 world/
+│   │   └── 📄 scara_world.sdf                      # Gazebo world (with table)
+│   │
+│   ├── 📁 meshes/
+│   │   ├── 📄 base.stl                             # Robot mesh files
+│   │   ├── 📄 link_y.stl
+│   │   ├── 📄 link_z.stl
+│   │   ├── 📄 link_1.stl
+│   │   └── 📄 link_2.stl
+│   │
+│   ├── 📁 launch/
+│   │   ├── 📄 view_all.launch.py                   # Complete system launch
+│   │   ├── 📄 view_gz.launch.py                    # Gazebo launch
+│   │   ├── 📄 view_rviz.launch.py                  # RViz launch
+│   │   └── 📄 follow_waypoints.launch.py           # Waypoint follower launcher
+│   │
+│   ├── 📁 scripts/
+│   │   └── 📄 follow_waypoints.py                  # Waypoint follower node
+│   │
+│   ├── 📁 waypoints/
+│   │   └── 📄 star_waypoints_xyz_meters.csv        # Example waypoints (star pattern)
+│   │
+│   ├── 📁 rviz/
+│       └── 📄 view_all.rviz                        # RViz configuration
+│   
+│─── 📁 arm_moveit_config/                       # MoveIt 2 configuration package
+     ├── 📄 package.xml
+     ├── 📄 CMakeLists.txt
+     ├── 📁 config/
+     │   ├── 📄 moveit_controllers.yaml          # Controller configuration
+     │   ├── 📄 joint_limits.yaml                # Joint limits & velocities
+     │   ├── 📄 ros2_controllers.yaml            # ros2_control config
+     │   ├── 📄 kinematics.yaml                  # IK solver config
+     │   ├── 📄 pilz_cartesian_limits.yaml
+     │   ├── 📄 ompl_planning.yaml
+     │   ├── 📄 stomp_planning.yaml
+     │   └── 📄 chomp_planning.yaml
+     ├── 📁 launch/
+     │   ├── 📄 demo.launch.py                   # MoveIt demo
+     │   ├── 📄 move_group.launch.py
+     │   ├── 📄 rsp.launch.py
+     │   ├── 📄 setup_assistant.launch.py
+     │   ├── 📄 spawn_controllers.launch.py
+     │   ├── 📄 static_virtual_joint_tfs.launch.py
+     │   └── 📄 warehouse_db.launch.py
+     └── 📁 rviz/
+         └── 📄 moveit.rviz                       # MoveIt RViz config
+
 ```
+
+### Key Files
+
+| File | Description |
+|------|-------------|
+| `scara_fab_station.urdf` | Complete robot description with 4-DOF kinematics |
+| `follow_waypoints.py` | Autonomous waypoint follower with IK solver |
+| `star_waypoints_xyz_meters.csv` | Example trajectory (star pattern, 11 points) |
+| `launch_all.sh` | One-command launcher for complete simulation |
+| `moveit_controllers.yaml` | Maps MoveIt to ros2_control |
+| `joint_limits.yaml` | Velocity/acceleration limits for all joints |
 
 ## Technical Details
 
