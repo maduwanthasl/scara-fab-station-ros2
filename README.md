@@ -121,7 +121,7 @@ mkdir -p ~/sr_ws/src
 cd ~/sr_ws/src
 
 # Clone repository
-git clone https://github.com/maduwanthasl/scara-fab-station-ros2/ scara_fab_station_description
+git clone https://github.com/maduwanthasl/scara-fab-station-ros2
 
 # Build workspace
 cd ~/sr_ws
@@ -186,7 +186,7 @@ x_m,y_m,z_m
 ...
 ```
 
-Place it in: `install/scara_fab_station_description/share/scara_fab_station_description/waypoints/`
+Place it in: `src/scara_fab_station_description/waypoints/`
 
 Modify launch file to use your CSV:
 ```python
