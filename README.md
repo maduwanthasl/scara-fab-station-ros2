@@ -7,6 +7,7 @@ A complete ROS 2 simulation package for a 4-DOF SCARA (Selective Compliance Asse
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Overview
+![Rviz Gazebo](https://raw.githubusercontent.com/maduwanthasl/scara-fab-station-ros2/refs/heads/main/picturs/2.png)
 
 This project demonstrates a complete robotic manipulation system featuring:
 - **SCARA robot simulation** in Gazebo with custom fabrication table environment
