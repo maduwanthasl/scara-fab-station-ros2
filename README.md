@@ -19,21 +19,18 @@ This project demonstrates a complete robotic manipulation system featuring:
 ## Demo Videos
 
 ### Waypoint Following Simulation
-![Cube Toolpath]((https://github.com/maduwanthasl/scara-fab-station-ros2/blob/main/videos/cube_Toolpath.webm))
-*Autonomous waypoint following with real-time path visualization*
+*Autonomous waypoint following with real-time path visualization* [Watch Demo](https://github.com/maduwanthasl/scara-fab-station-ros2/assets/1/cube_Toolpath.webm)
 
 ### MoveIt Planning and Execution
-![Plan and Execute]((https://github.com/maduwanthasl/scara-fab-station-ros2/blob/main/videos/plan_and_exhicute_robot.webm))
-*Interactive motion planning and trajectory execution with MoveIt 2*
+*Interactive motion planning and trajectory execution with MoveIt 2* [Watch Demo](https://github.com/maduwanthasl/scara-fab-station-ros2/assets/1/plan_and_exhicute_robot.webm)
 
 ### URDF Visualization in RViz
-![SCARA in RViz](https://github.com/maduwanthasl/scara-fab-station-ros2/blob/main/videos/scara_fab_station_rviz_control.webm)
-*Robot model loaded in RViz with joint state control visualization*
+*Robot model loaded in RViz with joint state control visualization* [Watch Demo](https://github.com/maduwanthasl/scara-fab-station-ros2/assets/1/scara_fab_station_rviz_control.webm)
+
+
 
 ### Zero and Home Pose Sequence
-![Zero and Home Pose](https://github.com/maduwanthasl/scara-fab-station-ros2/blob/main/videos/zero_and_home.webm)
-*Automated sequence: Zero pose → Home pose initialization*
-
+*Automated sequence: Zero pose → Home pose initialization* [Watch Demo](https://github.com/maduwanthasl/scara-fab-station-ros2/assets/1/zero_and_home.webm)
 
 ## Features
 
