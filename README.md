@@ -50,6 +50,9 @@ This project demonstrates a complete robotic manipulation system featuring:
   - Collision detection and path optimization
 
 ### 🎯 Waypoint System
+
+[waypoint_follower.mp4](https://github.com/maduwanthasl/scara-fab-station-ros2/blob/main/videos/waypoint_follower.mp4)
+
 - **CSV-Based Waypoints**: Define trajectories in simple X,Y,Z format
 - **Inverse Kinematics**: Automatic conversion from Cartesian to joint space
 - **Forward Kinematics**: Real-time end effector position calculation
