@@ -1,0 +1,7 @@
+# Default initial positions for scara_fab_station's ros2_control fake system
+
+initial_positions:
+  joint_1: 0
+  joint_2: 0
+  joint_y: 0
+  joint_z: 0

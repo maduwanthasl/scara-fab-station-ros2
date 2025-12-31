@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="scara_fab_station">
+  <!-- Base footprint link - dummy link with no inertia -->
+  <link name="base_footprint">
+  </link>
+
+  <!-- Joint connecting base_footprint to base_link at the same location -->
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-5.5511E-17 5.5511E-17 0.02"
+        rpy="0 0 0" />
+      <mass
+        value="9.0157" />
+      <inertia
+        ixx="0.94193"
+        ixy="-8.2117E-18"
+        ixz="7.1601E-20"
+        iyy="0.017146"
+        iyz="-7.3197E-19"
+        izz="0.95668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_y">
+    <inertial>
+      <origin
+        xyz="-0.032174 0.06 0.27794"
+        rpy="0 0 0" />
+      <mass
+        value="4.1997" />
+      <inertia
+        ixx="0.14707"
+        ixy="-4.471E-17"
+        ixz="0.00096519"
+        iyy="0.14663"
+        iyz="1.1349E-16"
+        izz="0.0014187" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_y.STL" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.4 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_y.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_y"
+    type="prismatic">
+    <origin
+      xyz="0.023 -0.503 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_y" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.886"
+      effort="6"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="link_z">
+    <inertial>
+      <origin
+        xyz="0.12281 -0.02 0.012695"
+        rpy="0 0 0" />
+      <mass
+        value="0.23602" />
+      <inertia
+        ixx="5.0275E-05"
+        ixy="-1.5756E-19"
+        ixz="7.5124E-06"
+        iyy="0.0012456"
+        iyz="-1.5474E-20"
+        izz="0.0012773" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_z.STL" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 0.8 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_z.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_z"
+    type="prismatic">
+    <origin
+      xyz="-0.023 0.08 0.002"
+      rpy="0 0 0" />
+    <parent
+      link="link_y" />
+    <child
+      link="link_z" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.57"
+      effort="3"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.097759 -8.9928E-14 0.010327"
+        rpy="0 0 0" />
+      <mass
+        value="0.22058" />
+      <inertia
+        ixx="4.692E-05"
+        ixy="-9.4787E-16"
+        ixz="-6.939E-06"
+        iyy="0.0010285"
+        iyz="-6.5105E-18"
+        izz="0.0010579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_1.STL" />
+      </geometry>
+      <material name="orange">
+        <color rgba="1.0 0.5 0.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0.227 -0.02 -0.017"
+      rpy="0 0 0" />
+    <parent
+      link="link_z" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.8"
+      upper="2.8"
+      effort="3"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.10412 6.3975E-06 -0.01173"
+        rpy="0 0 0" />
+      <mass
+        value="0.23621" />
+      <inertia
+        ixx="5.592E-05"
+        ixy="-1.3581E-07"
+        ixz="3.672E-05"
+        iyy="0.0011726"
+        iyz="2.9498E-08"
+        izz="0.0011952" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_2.STL" />
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shevi/sr_ws/src/scara_fab_station_description/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.194 0 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.85"
+      upper="2.85"
+      effort="3"
+      velocity="3" />
+  </joint>
+</robot>
